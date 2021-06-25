@@ -17,8 +17,8 @@
 {{/* VARIABLES */}}
 {{$setup := sdict}} {{with (dbGet 0 "ticket_cfg").Value}} {{$setup = sdict .}} {{end}}
 {{$category := toInt $setup.category}}
-{{$admins := $setup.Admins}}
-{{$mods := $setup.Mods}}
+{{$admins := $setup.Admins}} {{$admins = cslice.AppendSlice $admins}}
+{{$mods := $setup.Mods}} {{$mods = cslice.AppendSlice $mods}}
 {{$CloseEmoji := $setup.CloseEmoji}}
 {{$SolveEmoji := $setup.SolveEmoji}}
 {{$AdminOnlyEmoji := $setup.AdminOnlyEmoji}}

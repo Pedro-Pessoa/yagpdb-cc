@@ -9,7 +9,8 @@
 
 {{/* ACTUAL CODE! DONT TOUCH */}}
 {{$setup := sdict}} {{with (dbGet 0 "ticket_cfg").Value}} {{$setup = sdict .}} {{end}}
-{{$admins := $setup.Admins}} {{$mods := $setup.Mods}}
+{{$admins := $setup.Admins}} {{$admins = cslice.AppendSlice $admins}}
+{{$mods := $setup.Mods}} {{$mods = cslice.AppendSlice $mods}}
 {{$CCID := toInt $setup.CCID}}
 {{$Trc := toInt $setup.Trc}} {{$category := toInt $setup.category}}
 {{$msgID := toInt $setup.msgID}}

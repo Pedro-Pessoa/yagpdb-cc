@@ -68,7 +68,7 @@
 
 
     {{if not $Mods}}
-        {{$error = print $error "\n" "You need to set at least one admin role in the **$Admins** variable"}}
+        {{$error = print $error "\n" "You need to set at least one mod role in the **$Mods** variable"}}
     {{else}}
         {{range $Mods}}
             {{- if not (in $guildRoles .)}} {{$invalid = true}} {{end -}}
